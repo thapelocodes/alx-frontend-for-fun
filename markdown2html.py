@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """ Converts Markdown to HTML """
+import hashlib
 import os
+import re
 import sys
 
 
@@ -18,6 +20,19 @@ if __name__ == '__main__':
                 line = line.replace('**', '</b>', 1)
                 line = line.replace('__', '<em>', 1)
                 line = line.replace('__', '</em>', 1)
+
+                md5 = re.findall(r'\[\[.+?\]\]', line)
+                md5_in = re.findall(r'\[\[(.+?)\]\]', line)
+                if md5:
+                    line = line.replace(md5[0], hashlib.md5(
+                        md5_in[0].encode()).hexdigest())
+
+                rm_c = re.findall(r'\(\(.+?\)\)', line)
+                rm_c_more = re.findall(r'\(\((.+?)\)\)', line)
+                if rm_c:
+                    rm_c_more = ''.join(
+                        c for c in rm_c_more[0] if c not in 'Cc')
+                    line = line.replace(rm_c[0], rm_c_more)
 
                 length = len(line)
                 h = line.lstrip('#')
