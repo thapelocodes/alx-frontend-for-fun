@@ -12,13 +12,15 @@ if __name__ == '__main__':
 
     with open(sys.argv[1]) as md:
         with open(sys.argv[2], 'w') as html:
-            ul_start = False
+            ul_start, ol_start = False, False
             for line in md:
                 length = len(line)
                 h = line.lstrip('#')
                 h_lvl = length - len(h)
                 ul = line.lstrip('-')
                 ul_num = length - len(ul)
+                ol = line.lstrip('*')
+                ol_num = length - len(ol)
 
                 if 1 <= h_lvl <= 6:
                     line = f'<h{h_lvl}>{h.strip()}</h{h_lvl}>\n'
@@ -32,8 +34,19 @@ if __name__ == '__main__':
                     html.write('</ul>\n')
                     ul_start = False
 
+                if ol_num:
+                    if not ol_start:
+                        html.write('<ol>\n')
+                        ol_start = True
+                    line = f'<li>{ol.strip()}</li>\n'
+                if ol_start and not ol_num:
+                    html.write('</ol>\n')
+                    ol_start = False
+
                 if length > 1:
                     html.write(line)
             if ul_start:
                 html.write('</ul>\n')
+            if ol_start:
+                html.write('</ol>\n')
     exit(0)
