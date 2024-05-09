@@ -14,6 +14,11 @@ if __name__ == '__main__':
         with open(sys.argv[2], 'w') as html:
             ul_start, ol_start, p_start = False, False, False
             for line in md:
+                line = line.replace('**', '<b>', 1)
+                line = line.replace('**', '</b>', 1)
+                line = line.replace('__', '<em>', 1)
+                line = line.replace('__', '</em>', 1)
+
                 length = len(line)
                 h = line.lstrip('#')
                 h_lvl = length - len(h)
