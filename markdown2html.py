@@ -18,7 +18,7 @@ if __name__ == '__main__':
                 h_lvl = length - len(h)
 
                 if 1 <= h_lvl <= 6:
-                    line = f'<h{h_lvl}>{h.strip()}<h{h_lvl}>\n'
+                    line = f'<h{h_lvl}>{h.strip()}</h{h_lvl}>\n'
 
                 if length > 1:
                     html.write(line)
