@@ -679,80 +679,80 @@ html {
     font-size: 10rem;
     z-index: -1;
   }
-
+  
   /*** ARTICLE PAGE ***/
   
   /* Section HERO (article)
-        ============================= */
-
+      ============================= */
+  
   .hero-article {
     background-size: 150rem 100rem;
     background-position: 50% 0;
   }
-
+  
   .hero-article::before {
     content: "";
+    background: rgba(0, 0, 0, 0.8);
     position: absolute;
     top: 0;
-    left: 0;
     right: 0;
+    left: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.8);
     z-index: 0;
   }
-
+  
   .hero-article .section-inner {
     text-align: center;
     align-items: center;
     min-height: 40vh;
   }
-
+  
   .hero-article .section-body {
     position: relative;
     padding: 7rem 0 0;
     z-index: 2;
   }
-
+  
   .main-article {
     padding: 5rem 0;
   }
-
+  
   /* Post
       ============================= */
-
+  
   .post {
     display: flex;
-  }
-
-  .post img {
-    width: 100%;
-    height: auto;
   }
   
   .post-content {
     width: 100%;
   }
-
-  .post-content p:first-child {
-    font-size: var(--font-size-x-large);
-  }
-
-  .post-content .img-caption {
-    margin: 1rem 0;
-    padding: 0 5rem;
-    font-size: var(--font-size-small);
-    color: var(--color-grey);
-    text-align: center;
-  }
-
+  
   .post-aside {
     order: -1;
     min-width: 20%;
   }
-
-  /* Post meta
+  
+  .post img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .post-content p:first-child {
+    font-size: var(--font-size-x-large);
+  }
+  
+  .post-content .img-caption {
+    margin: 1rem 0;
+    padding: 0 0.5rem;
+    font-size: var(--font-size-small);
+    color: var(--color-grey);
+    text-align: center;
+  }
+  
+  /* Post Meta
       ============================= */
-
+  
   .post-meta-list {
     flex-direction: column;
   }
@@ -763,34 +763,34 @@ html {
     text-transform: uppercase;
     display: block;
   }
-
-  .post-meta-list [class*='post-meta-'] {
+  
+  .post-meta-list [class*="post-meta"] {
     margin-bottom: 1rem;
     padding-bottom: 1rem;
     border-bottom: 0.2rem solid var(--color-light-grey);
   }
-
-  .post-meta-list [class*='post-meta-']:last-child {
+  
+  .post-meta-list [class*="post-meta"]:last-child {
     border: none;
     margin-bottom: 3rem;
   }
-
+  
   /* Tag list
       ============================= */
-      
+  
   .tag-list {
     padding: 0;
     list-style: none;
   }
-
+  
   .tag-list li {
     display: inline;
   }
-
+  
   .tag-list li::after {
     content: ", ";
   }
-
+  
   .tag-list li:last-child::after {
     content: "";
   }
