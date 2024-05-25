@@ -1,0 +1,63 @@
+/* maximize page for proper view */
+
+:root {
+  --box-1-color: #1fcd6c;
+  --box-2-color: #2d98de;
+  --box-3-color: #344a61;
+  --box-4-color: #9d55b9;
+  --box-5-color: #ea7d04;
+  --font-large: 5rem;
+  --box-width: 3.5px;
+  --box-height: 2px;
+}
+  
+.container {
+  display: flex;
+  height: 50vh;
+  justify-content: center;
+  align-items: center;
+}
+  
+.box {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-basis: 100px;
+}
+
+.box1 {
+  background: var(--box-1-color);
+}
+
+.box2 {
+  background: var(--box-2-color);
+}
+
+.box3 {
+  background: var(--box-3-color);
+  flex-grow: 0.2;
+  height: 155px;
+  font-size: var(--font-large);
+}
+
+.box4 {
+  background: var(--box-4-color);
+}
+
+.box5 {
+  background: var(--box-5-color);
+}
+
+.box1, .box5 {
+  height: 70px;
+  transform: translateY(23px);
+  font-size: calc(.27 * var(--font-large));
+}
+
+.box2, .box4 {
+  flex-grow: 0.055;
+  height: 97px;
+  transform: translateY(15px);
+  font-size: calc(.5 * var(--font-large));
+}
