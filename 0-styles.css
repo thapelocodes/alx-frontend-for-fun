@@ -1,0 +1,49 @@
+:root {
+  --card-border-radius: 5px;
+  --card-border: #989898 solid 2px;
+  --card-img: url(0-sprite.png);
+  --card-bg-img: var(--card-img);
+  --card-font-size: 2.5rem;
+  --card-font-weight: 550;
+  --card-mask-img: var(--card-img);
+  --body-bg-color: #f7f7f7;
+}
+
+ul {
+  display: block;
+  list-style: none;
+  text-align: center;
+}
+
+li {
+  background-color: var(--body-bg-color);
+  font-size: var(--card-font-size);
+  font-weight: var(--card-font-weight);
+  float: left;
+  border: var(--card-border);
+  border-radius: var(--card-border-radius);
+  height: 500px;
+  width: 310px;
+  margin-right: 2rem;
+  margin-top: 2rem;
+  padding-top: 0.5em;
+}
+
+span {
+  display: block;
+  height: 80%;
+  width: 100%;
+  background-color: var(--body-bg-color);
+  background-image: var(--card-bg-img);
+  background-repeat: no-repeat;
+  background-position-y: center;
+  background-position-x: +15px;
+}
+
+.i-css {
+  background-position-x: center;
+}
+
+.i-js {
+  background-position-x: -14.1em;
+}
