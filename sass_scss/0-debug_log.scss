@@ -1,0 +1,6 @@
+//simple mixin to print `Hello world` to the debug output.
+@mixin hello_world {
+  @debug "Hello world";
+}
+
+@include hello_world();
