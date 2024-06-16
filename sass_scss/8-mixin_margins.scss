@@ -1,0 +1,14 @@
+/* Margin mixin */
+
+@mixin my_margin($var) {
+  margin-left: $var;
+  margin-right: $var;
+}
+
+body {
+  @include my_margin(10px);
+}
+
+div {
+  @include my_margin(15px);
+}
