@@ -1,0 +1,7 @@
+/* Columns and operators */
+
+@for $var from 1 through 4 {
+  col-#{$var} {
+    width: 100% / $var;
+  }
+}
